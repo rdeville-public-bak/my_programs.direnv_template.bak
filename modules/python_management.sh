@@ -354,8 +354,9 @@ python_management()
     # Create python virtual environment.
     python3 -m venv "${venv_dir}"
     # Activate virtualenv before installing dependencies.
-    # shellcheck disable=SC1090
     # - SC1090: Can't follow non-constant source.
+    # - SC1091: Can't source file, file not existing
+    # shellcheck disable=SC1090,SC1091
     source "${venv_dir}/bin/activate"
     # Install `wheel` and `pip-tools` as first dependencies.
     direnv_log "INFO" "Installing minimum python virtual environment dependencies."
@@ -400,8 +401,9 @@ python_management()
   then
     build_virtual_env "${venv_dir}"
   else
-    # shellcheck disable=SC1090
     # - SC1090: Can't follow non-constant source.
+    # - SC1091: Can't source file, file not existing
+    # shellcheck disable=SC1090,SC1091
     source "${venv_dir}/bin/activate"
   fi
 
