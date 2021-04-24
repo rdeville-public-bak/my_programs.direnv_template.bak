@@ -58,14 +58,8 @@ deps =
   -r./requirements.dev.txt
 commands =
   # Linter bash script using shellcheck
-  bash -c '\
-    shellcheck \
-      -s bash \
-      -x \
-      $(find . -type f \\( \
-        -name "*.sh" \
-        -not -path "./.*" \
-        -not -path "./python_venv/*" \\) ) '
+  bash -c 'shellcheck -s bash -x *.sh */*.sh deactivate_direnv activate_direnv .envrc'
+  # Check bash docstrings
   bash -c 'DIRENV_ROOT="$(pwd)" ./tools/generate_source_docs.sh --dry-run'
 
 
