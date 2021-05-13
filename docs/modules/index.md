@@ -1,3 +1,7 @@
+---
+hide:
+  - toc # Hide toc pane
+---
 # Modules
 
 Modules are part of `direnv_template` which run tasks related to a specific

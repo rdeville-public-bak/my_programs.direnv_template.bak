@@ -295,7 +295,17 @@ plugins:
 # ---------------------------------------------------------------------------
 nav:
   - Home: index.md
-  - Setup Directory Environment: setup_directory_environment.md
+  - Setup Directory Environment:
+    - setup/index.md
+    - Installation: setup/installation.md
+    - Configuration: setup/configuration.md
+    - Activation:
+      - setup/activation.md
+      - Manual Activation: setup/activation.html#manual-activation
+      - Automatic Activation: setup/activation.html#automatic-activation
+      - Error During Activation: setup/activation.html#error-during-activation
+    - Deactivation: setup/deactivation.md
+    - Upgrade: setup/upgrade.md
   - Modules:
     - modules/index.md
     - Ansible: modules/ansible.md
