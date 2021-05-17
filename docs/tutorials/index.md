@@ -15,8 +15,8 @@ Once done, you can check following tutorials as starting point:
     project use the same documentation and CI process. So do not forget to adapt
     the URL of the repo.
 
-[developers_guideline]: {{ site_base_url }}dev_guides/contributing.html
+[developers_guideline]: {{ site_base_url }}/latest/dev_guides/contributing.html
 [add_direnv_module]: add_direnv_module.md
-[update_documentation]: {{ site_base_url }}dev_guides/tutorials/update_documentation.html
-[update_ci]: {{ site_base_url }}dev_guides/tutorials/update_ci.html
+[update_documentation]: {{ site_base_url }}/latest/dev_guides/tutorials/update_documentation.html
+[update_ci]: {{ site_base_url }}/latest/dev_guides/tutorials/update_ci.html
 [main_docs_repo]: {{ site_base_url }}
