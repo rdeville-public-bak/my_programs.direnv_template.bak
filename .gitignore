@@ -4,6 +4,7 @@
 .tmuxinator.yml
 .old/
 .tmp/
+docs/versions.json
 
 ### BEGIN MKDOCS TEMPLATE ###
 ### WARNING, DO NOT UPDATE CONTENT BETWEEN MKDOCS TEMPLATE TAG ! ###
