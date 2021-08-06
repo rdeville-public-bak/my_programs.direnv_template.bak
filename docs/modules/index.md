@@ -1,7 +1,3 @@
----
-hide:
-  - toc # Hide toc pane
----
 # Modules
 
 Modules are part of `direnv_template` which run tasks related to a specific
@@ -25,6 +21,7 @@ environment, for instance module `ansible` will only execute task related to
 | [packer](packer.md) | Export packer variables |
 | [path_management](path_management.md) | Update `PATH` variable with user defined folder |
 | [python_management](python_management.md) | Setup a complete python virtual environment |
+| [taskwarrior](taskwarrior.md) | Setup taskwarrior variable to ease use of taskwarrior |
 | [vimrc_local](vimrc_local.md) | Setup a `.vimrc.local` file at the root of the directory |
 
 </center>

@@ -320,6 +320,7 @@ nav:
     - Packer: modules/packer.md
     - Path Management: modules/path_management.md
     - Python Management: modules/python_management.md
+    - Taskwarrior: modules/taskwarrior.md
     - Vimrc local: modules/vimrc_local.md
   - Tutorials:
     - tutorials/index.md
@@ -340,6 +341,7 @@ nav:
       - packer.sh: references/modules/packer.md
       - path_management.sh: references/modules/path_management.md
       - python_management.sh: references/modules/python_management.md
+      - taskwarrior.sh: references/modules/taskwarrior.md
       - vimrc_local.sh: references/modules/vimrc_local.md
     - src:
       - keepass.sh: references/src/keepass.md
