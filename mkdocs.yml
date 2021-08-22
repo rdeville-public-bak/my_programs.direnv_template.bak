@@ -311,6 +311,7 @@ nav:
     - modules/index.md
     - Ansible: modules/ansible.md
     - Direnv Management: modules/direnv_management.md
+    - Export Var: modules/export_var.md
     - Folders: modules/folders.md
     - Go Management: modules/go_management.md
     - Keepass: modules/keepass.md
@@ -332,6 +333,7 @@ nav:
     - modules:
       - ansible.sh: references/modules/ansible.md
       - direnv_management.sh: references/modules/direnv_management.md
+      - export_var.sh: references/modules/export_var.md
       - folders.sh: references/modules/folders.md
       - go_management.sh: references/modules/go_management.md
       - keepass.sh: references/modules/keepass.md

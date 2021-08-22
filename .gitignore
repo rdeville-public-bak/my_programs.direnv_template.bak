@@ -5,6 +5,7 @@
 .old/
 .tmp/
 docs/versions.json
+.undodir
 
 ### BEGIN MKDOCS TEMPLATE ###
 ### WARNING, DO NOT UPDATE CONTENT BETWEEN MKDOCS TEMPLATE TAG ! ###
