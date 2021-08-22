@@ -57,7 +57,7 @@ export_var()
   #   - SC2514: export_var is referenced but not assigned
   for i_key in "${!export_var[@]}"
   do
-    cmd = "export ${i_key}=\"${export_var[ikey]}\""
+    cmd="export ${i_key}=\"${export_var[ikey]}\""
     ${cmd}
   done
 }
@@ -86,7 +86,7 @@ deactivate_export_var()
   # """
   for i_key in "${!export_var[@]}"
   do
-    cmd = "unset ${i_key}"
+    cmd="unset ${i_key}"
     ${cmd}
   done
 }
