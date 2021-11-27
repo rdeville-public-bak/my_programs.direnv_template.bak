@@ -153,10 +153,14 @@ def add_external_to_nav(
                         repo_parent,
                         nav_parent[1:],
                     )
-    elif repo_dict["online_url"].startswith('/'):
-        nav.append({
-            repo_dict["nav_entry"]: repo_dict["online_url"].replace('/','../',1)
-        })
+    elif repo_dict["online_url"].startswith("/"):
+        nav.append(
+            {
+                repo_dict["nav_entry"]: repo_dict["online_url"].replace(
+                    "/", "../", 1
+                )
+            }
+        )
     else:
         nav.append({repo_dict["nav_entry"]: repo_dict["online_url"]})
 
@@ -406,9 +410,7 @@ def set_copyright(env: dict, git_repo: git.Repo) -> None:
         curr_year = time.strftime("%Y", time.localtime())
 
         if first_year == curr_year:
-            env.variables[
-                "date_copyright"
-            ] = f"Copyright &copy; {curr_year}"
+            env.variables["date_copyright"] = f"Copyright &copy; {curr_year}"
         else:
             env.variables[
                 "date_copyright"
@@ -417,7 +419,6 @@ def set_copyright(env: dict, git_repo: git.Repo) -> None:
         env.conf[
             "copyright"
         ] = f"{env.variables['date_copyright']} {env.variables['copyright']}"
-
 
 
 def set_repo_name(env: dict, repo_slug: str) -> None:
@@ -834,8 +835,8 @@ def update_version(env: dict) -> None:
         minor = int(i_tag[1])
         patch = str()
         for i_remain_tag in i_tag[2:]:
-            if i_remain_tag and i_remain_tag not in ("","\n"):
-                i_remain_tag = i_remain_tag.replace("\n","")
+            if i_remain_tag and i_remain_tag not in ("", "\n"):
+                i_remain_tag = i_remain_tag.replace("\n", "")
                 if not patch:
                     patch = f"{i_remain_tag}"
                 else:
