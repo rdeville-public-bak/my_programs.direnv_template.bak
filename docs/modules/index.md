@@ -1,7 +1,3 @@
----
-hide:
-  - toc # Hide toc pane
----
 # Modules
 
 Modules are part of `direnv_template` which run tasks related to a specific
@@ -16,6 +12,7 @@ environment, for instance module `ansible` will only execute task related to
 | :---------- | :---------- |
 | [ansible](ansible.md) | Setup ansible configuration file and tree architecture |
 | [direnv_management](direnv_management.md) | Activate the direnv management module |
+| [export_var](export_var.md) | Export arbitrary variables |
 | [folders](folders.md) | Ensure specified folder exists, if not create them. |
 | [go_management](go_management.md) | Export GO variables to install go modules locally |
 | [keepass](keepass.md) | Setup keepass wrapper script and variable to ease use of keepassxc-cli |
@@ -25,6 +22,7 @@ environment, for instance module `ansible` will only execute task related to
 | [packer](packer.md) | Export packer variables |
 | [path_management](path_management.md) | Update `PATH` variable with user defined folder |
 | [python_management](python_management.md) | Setup a complete python virtual environment |
+| [taskwarrior](taskwarrior.md) | Setup taskwarrior variable to ease use of taskwarrior |
 | [vimrc_local](vimrc_local.md) | Setup a `.vimrc.local` file at the root of the directory |
 
 </center>
