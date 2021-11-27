@@ -112,6 +112,8 @@ taskwarrior()
   fi
 
   # Ensure every required variable are defined
+  # shellcheck disable=SC2043
+  # - SC2043: This loop will only ever run once. Bad quoting or missing glob/expansion?
   for i_var in "taskwarrior_taskrc"
   do
     export_var_name="$(echo "${i_var}" | tr '[:lower:]' '[:upper:]')"
