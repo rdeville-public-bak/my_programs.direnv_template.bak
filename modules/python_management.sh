@@ -235,11 +235,10 @@ python_management()
         direnv_log "ERROR" "Requires python version **${python_full_version}**."
         direnv_log "ERROR" "Please refer to your distribution documentation."
         return 1
-      elif (! command -v pip3 &> /dev/null \
-            || ! pip3 --version | grep -q "${python_main_version}")
+      elif ! command -v pip3 &> /dev/null
       then
-        direnv_log "ERROR" "Required pip version using python version **${python_main_version}** is not installed."
-        direnv_log "ERROR" "Please refer to your distribution documentation to install pip3 using python **${python_main_version}**."
+        direnv_log "ERROR" "Required pip is not installed."
+        direnv_log "ERROR" "Please refer to your distribution documentation to install pip3."
         return 1
       else
         touch "${DIRENV_ROOT}/.direnv/.python_version.ok"
