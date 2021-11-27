@@ -10,6 +10,13 @@ Modified content will be overwritten when updating
 
 ## 🔖 v1.2
 
+!!! info "🔖 v1.2.2"
+
+    ### 🔖 v1.2.2 <small>27/11/2021</small>
+
+      - 🚨 Remove shellcheck warning in taskwarrior module
+      - 💚 Apply python formatter to plugins.py
+
 !!! info "🔖 v1.2.1"
 
     ### 🔖 v1.2.1 <small>27/11/2021</small>
