@@ -56,7 +56,7 @@ def write_yaml(data: dict, output_file: str) -> None:
         data: Dictionary which hold data to write.
         output_file: Path to the output file to which `data` will be written.
     """
-    with open(output_file, "w") as stream:
+    with open(output_file, "w", encoding="utf-8") as stream:
         try:
             yaml.dump(data, stream)
         except yaml.YAMLError as exc:
@@ -70,7 +70,7 @@ def load_yaml(input_file: str) -> dict:
         input_file: Path to the input file to load.
 
     """
-    with open(input_file, "r") as stream:
+    with open(input_file, "r", encoding="utf-8") as stream:
         try:
             output_dict = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
@@ -111,7 +111,7 @@ class CloneRoles:
     def __init__(self) -> None:
         """Initialisation method."""
         self.requirement_ansible_galaxy_temp = dict(roles=[], collections=[])
-        self.requirement_ansible_galaxy = dict()
+        self.requirement_ansible_galaxy = {}
         self.delete_temp_file = True
 
     # Properties

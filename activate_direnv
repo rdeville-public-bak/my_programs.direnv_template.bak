@@ -291,8 +291,14 @@ activate_direnv()
     if [[ "$(sha1sum "${file}" | cut -d " " -f 1 )" != "$(cat "${sha1_file}")" ]]
     then
       # Remove every before the last occurrence of `${DIRENV_ROOT}`
+      # - SC2295: Expansion inside ${..} need to be quoted separately, otherwise
+      #           they match patterns.
+      # shellcheck disable=SC2295
       file=${file##*${DIRENV_ROOT}\/}
       # Remove every occurrences of `${DIRENV_ROOT`
+      # - SC2295: Expansion inside ${..} need to be quoted separately, otherwise
+      #           they match patterns.
+      # shellcheck disable=SC2295
       sha1_file=${sha1_file##*${DIRENV_ROOT}\/}
       # Not using `direnv_log`, because script may not be loaded at this step.
       echo -e "\
