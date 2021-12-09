@@ -10,6 +10,12 @@ Modified content will be overwritten when updating
 
 ## 🔖 v1.2
 
+!!! info "🔖 v1.2.3"
+
+    ### 🔖 v1.2.3 <small>09/12/2021</small>
+
+      - ⬆📝 Upgrade documentation to use latest mkdocs_template_rdeville
+
 !!! info "🔖 v1.2.2"
 
     ### 🔖 v1.2.2 <small>27/11/2021</small>
