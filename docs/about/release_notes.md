@@ -10,6 +10,14 @@ Modified content will be overwritten when updating
 
 ## 🔖 v1.2
 
+!!! info "🔖 v1.2.4"
+
+    ### 🔖 v1.2.4 <small>09/12/2021</small>
+
+      - ⬆📝 Upgrade documentation to use latest mkdocs_template_rdeville (i.e.
+        without mkdocs with-pdf plugins)
+      - 🔧 Update sha1 of updated script files
+
 !!! info "🔖 v1.2.3"
 
     ### 🔖 v1.2.3 <small>09/12/2021</small>
