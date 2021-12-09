@@ -79,6 +79,8 @@ EOM
         line_to=${i_line}
       fi
     done <<< "$(grep -n -e "^# \"\"\"" "${i_node}" | cut -d ":" -f 1)"
+    # - SC2295: Expansion inside ${..} need to be quoted separately
+    # shellcheck disable=SC2295
     module_name=${i_node##${DIRENV_MODULE_FOLDER}\/}
     module_name=${module_name%%.sh}
 

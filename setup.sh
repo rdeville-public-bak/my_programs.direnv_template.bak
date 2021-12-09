@@ -275,6 +275,9 @@ ${e_normal}"
           if ! [[ "${i_subnode}" =~ ^${file_from}\/[\.]+$ ]]
           then
             # Remove everything before the last occurence of ${DIRENV_CLONE_ROOT}
+            # - SC2295: Expansions inside ${..} need to be quoted separately,
+            #           otherwise they match as patterns.
+            # shellcheck disable=SC2295
             i_subnode=${i_subnode##*${DIRENV_CLONE_ROOT}\/}
             tmp_nodes+=("${i_subnode}")
           fi

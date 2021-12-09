@@ -273,6 +273,8 @@ parse_method_doc_line()
     # Handling of zsh for variable substitution
     if [[ -n "${ZSH_VERSION}" ]]
     then
+      # - SC2296: Parameter expansions can't start with (.
+      # shellcheck disable=SC2296
       part_content="${(P)var_subst}"
     else
       part_content="${!var_subst}"

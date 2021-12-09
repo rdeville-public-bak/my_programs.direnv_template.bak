@@ -342,6 +342,8 @@ main()
       # value as variable `info`.
       if [[ -n "${ZSH_VERSION}" ]]
       then
+        # - SC2296: Parameter expansions can't start with (.
+        # shellcheck disable=SC2296
         prefix="${(P)msg_severity}"
       else
         prefix="${!msg_severity}"
@@ -353,6 +355,8 @@ main()
 
     if [[ -n "${ZSH_VERSION}" ]]
     then
+      # - SC2296: Parameter expansions can't start with (.
+      # shellcheck disable=SC2296
       color_output="${(P)color_output}"
     else
       color_output="${!color_output}"

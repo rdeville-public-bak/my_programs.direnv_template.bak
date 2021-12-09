@@ -159,6 +159,8 @@ python_management()
       # Handle ZSH for variable substitution
       if [[ -n "${ZSH_VERSION}" ]]
       then
+        # - SC2296: Parameter expansions can't start with (.
+        # shellcheck disable=SC2296
         i_var_value="${(P)i_var_name}"
       else
         i_var_value="${!i_var_name}"
