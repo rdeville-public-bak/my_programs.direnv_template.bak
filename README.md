@@ -1,7 +1,7 @@
 <div align="center" style="text-align: center;">
 
   <!-- Project Title -->
-  <a href="https://framagit.org/rdeville.private/my_programs/direnv_template">
+  <a href="https://framagit.org/rdeville.public/my_programs/direnv_template">
     <img src="docs/assets/img/meta/direnv_template_logo.png" width="100px">
     <h1>Direnv Template</h1>
   </a>
