@@ -100,6 +100,7 @@ def add_internal_to_nav(
     """
     if nav_parent:
         for i_nav in nav:
+            # "nav_entry" is a key of current parsed `nav`
             if nav_parent[0] in i_nav:
                 for i_key in i_nav:
                     add_internal_to_nav(
@@ -108,6 +109,16 @@ def add_internal_to_nav(
                         repo_dict,
                         repo_parent,
                         nav_parent[1:],
+                    )
+            # "nav_entry" is a subkey of current parsed `nav`
+            elif nav_parent[0] in yaml.dump(i_nav):
+                for i_key in i_nav:
+                    add_internal_to_nav(
+                        env,
+                        i_nav[i_key],
+                        repo_dict,
+                        repo_parent,
+                        nav_parent[0:],
                     )
     else:
         mkdocs_path = env.project_dir
@@ -175,7 +186,7 @@ def add_nav_entry(nav: list, nav_parent: list = None) -> None:
         nav : Navigation dictionary (subpart of it if called recursively)
         nav_parent : List of keys storing parents `nav_entry` keys
     """
-    entry = dict()
+    entry = {}
 
     for i_nav in nav:
         if nav_parent[0] in i_nav:
@@ -224,22 +235,24 @@ def update_nav(
     """
     for i_key in repo_dict:
         if not nav_parent or first_iteration:
-            nav_parent = list()
+            nav_parent = []
 
         if not repo_parent or first_iteration:
-            repo_parent = list()
+            repo_parent = []
 
         if i_key == "nav_entry":
             nav_parent.append(repo_dict["nav_entry"])
         elif i_key == "internal":
             for i_repo in repo_dict["internal"]:
-                add_nav_entry(env.conf["nav"], nav_parent)
+                if nav_parent[0] not in yaml.dump(env.conf["nav"]):
+                    add_nav_entry(env.conf["nav"], nav_parent)
                 add_internal_to_nav(
                     env, env.conf["nav"], i_repo, repo_parent, nav_parent
                 )
         elif i_key == "external":
             for i_repo in repo_dict["external"]:
-                add_nav_entry(env.conf["nav"], nav_parent)
+                if nav_parent[0] not in yaml.dump(env.conf["nav"]):
+                    add_nav_entry(env.conf["nav"], nav_parent)
                 add_external_to_nav(
                     env, env.conf["nav"], i_repo, repo_parent, nav_parent
                 )
@@ -562,7 +575,7 @@ def set_config(env: dict) -> None:
 
     if "subrepo" in env.variables:
         if (
-            env.variables["internal_subdoc"]
+            not env.variables["internal_subdoc"]
             and "monorepo" in env.conf["plugins"]
         ):
             env.conf["plugins"].pop("monorepo")
@@ -600,7 +613,7 @@ def load_yaml_file(path: str, filename: str) -> None:
         schema.validate(raise_exception=True)
         data_content = schema.source
     else:
-        with open(source_file) as file:
+        with open(source_file, encoding="UTF-8") as file:
             data_content = yaml.safe_load(file)
 
     return data_content, data_type
@@ -674,7 +687,7 @@ def update_subrepo_info(
     Return:
         A updating dictionary storing subrepo information
     """
-    return_dict = dict()
+    return_dict = {}
     for i_repo in subrepo_list:
         subrepo_root = os.path.join(path, i_repo["name"])
 
@@ -683,7 +696,7 @@ def update_subrepo_info(
                 f"{INFO_CLR}INFO [macros] - Pulling repo {i_repo['name']}{RESET_CLR}"
             )
             git_subrepo = git.Repo(subrepo_root)
-            git_subrepo.remotes.origin.pull()
+            git_subrepo.remotes.origin.pull("master")
         else:
             print(
                 f"{INFO_CLR}INFO [macros] - Cloning repo {i_repo['name']}{RESET_CLR}"
@@ -729,7 +742,7 @@ def update_subrepo(
     Returns:
         An updated dictionary of repo informations.
     """
-    return_dict = dict()
+    return_dict = {}
     for i_key in subrepo_dict:
         if isinstance(subrepo_dict[i_key], list):
             if i_key == "external":
@@ -824,7 +837,7 @@ def update_version(env: dict) -> None:
     ):
         return
     git_repo = git.Repo(search_parent_directories=True)
-    mike_version = list()
+    mike_version = []
     last_major = -1
     last_minor = -1
     last_patch = str(-1)
@@ -875,7 +888,9 @@ def update_version(env: dict) -> None:
     )
     mike_version.reverse()
     with open(
-        os.path.join(env.project_dir, "docs", "versions.json"), "w"
+        os.path.join(env.project_dir, "docs", "versions.json"),
+        "w",
+        encoding="UTF-8",
     ) as version_file:
         json.dump(mike_version, version_file, indent=2)
 

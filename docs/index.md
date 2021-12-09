@@ -39,8 +39,6 @@ platforms.
 
 </div>
 
---------------------------------------------------------------------------------
-
 <!-- END MKDOCS TEMPLATE -->
 
 ## Introduction
@@ -143,7 +141,6 @@ Once you have finish working, you may want to deactivate directory environment:
 
   - If you activate it manually, a new command should be defined:
     `deactivate_direnv`. You simply need to call it wherever you are.
-
 
 See [Setup directory environment][setup_directory_environment] for a more complete usage description.
 
