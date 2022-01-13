@@ -12,6 +12,14 @@
 
 --------------------------------------------------------------------------------
 
+**IMPORTANT: Project Archived**
+
+**Development of this project has been stop in favor of project [My Dotfiles /
+Direnv][my_dotfiles_direnv] to setup my `direnv` configuration globally and not
+per project**
+
+--------------------------------------------------------------------------------
+
 Project to manage Directory Environment (either manually or using
 [`direnv`][direnv]) uniformly for all my projects.
 
@@ -35,6 +43,7 @@ platforms.
 [license]: LICENSE
 [build_status_badge]: https://framagit.org/rdeville.public/my_programs/direnv_template/badges/master/pipeline.svg?style=flat-square&logo=appveyor
 [build_status]: https://framagit.org/rdeville.public/my_programs/direnv_template/commits/master
+[my_dotfiles_direnv]: https://framagit.org/rdeville.public/my_dotfiles/direnv
 
 ## Table of Content
 
