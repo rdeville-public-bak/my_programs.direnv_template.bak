@@ -10,6 +10,12 @@ Modified content will be overwritten when updating
 
 ## 🔖 v1.2
 
+!!! info "🔖 v1.2.6"
+
+    ### 🔖 v1.2.6 <small>13/01/2021</small>
+
+      - 📝 Add archived notice in README.md and docs/index.md.
+
 !!! info "🔖 v1.2.5"
 
     ### 🔖 v1.2.5 <small>09/12/2021</small>
