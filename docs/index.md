@@ -23,6 +23,17 @@ Modified content will be overwritten when updating
 
 <hr>
 
+<br>
+IMPORTANT: Project Archived
+
+Development of this project has been stop in favor of project
+<a href={{ site_base_url }}/my_dotfiles/direnv>
+  My Dotfiles / Direnv</a>
+to setup my `direnv` configuration globally and not per project
+<br>
+
+<hr>
+
 {{ to_html(curr_repo.desc) }}
 
 <hr>
